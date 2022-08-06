@@ -23,6 +23,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class PetServiceImplTest {
+
   @Mock
   PetRepository petRepository;
   @InjectMocks
@@ -49,17 +50,16 @@ class PetServiceImplTest {
 
   @Test
   @DisplayName("La mascota se ha guardado correctamene")
-  void savePet_OK(){
+  void savePet_OK() {
     //Arrange
     petRequestDto.setName("name");
 
-    //Act
     when(petRepository.save(any(Pet.class))).thenReturn(Pet.builder()
         .id(1L)
         .birthDate(LocalDate.now())
         .name("no_name")
         .build());
-
+    //Act
     PetResponseDto petResponseDto = petService.savePet(petRequestDto);
 
     //Assert
@@ -67,7 +67,7 @@ class PetServiceImplTest {
   }
 
   @Test
-  void savePet_Verify(){
+  void savePet_Verify() {
     //Arrange
     petRequestDto.setName("name");
 
