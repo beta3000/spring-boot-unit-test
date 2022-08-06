@@ -42,6 +42,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <!--JACOCO-->
+    <dependency>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.6</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -57,6 +63,31 @@
             </exclude>
           </excludes>
         </configuration>
+      </plugin>
+      <!--JACOCO-->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.6</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+<!--        <configuration>-->
+<!--          <excludes>-->
+<!--            <exclude>com/ciro/springbootunittest/domain/*</exclude>-->
+<!--          </excludes>-->
+<!--        </configuration>-->
       </plugin>
     </plugins>
   </build>

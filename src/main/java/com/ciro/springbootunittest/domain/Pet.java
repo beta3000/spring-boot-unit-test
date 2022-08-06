@@ -32,5 +32,4 @@ public class Pet {
   private String name;
   @Column(name = "birth_date")
   private LocalDate birthDate;
-
 }

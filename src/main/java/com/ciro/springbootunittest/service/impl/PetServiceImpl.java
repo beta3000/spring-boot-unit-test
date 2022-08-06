@@ -35,7 +35,7 @@ public class PetServiceImpl implements PetService {
   }
 
   private void validatePet(PetRequestDto petRequestDto) {
-    if (petRequestDto.getName().isEmpty()) {
+    if (petRequestDto.getName() == null || petRequestDto.getName().isEmpty()) {
       throw new PetBusinessError("Name no puede ser empty");
     }
   }
