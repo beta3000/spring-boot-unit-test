@@ -83,11 +83,11 @@
             </goals>
           </execution>
         </executions>
-<!--        <configuration>-->
-<!--          <excludes>-->
-<!--            <exclude>com/ciro/springbootunittest/domain/*</exclude>-->
-<!--          </excludes>-->
-<!--        </configuration>-->
+        <configuration>
+          <excludes>
+            <exclude>com/ciro/springbootunittest/domain/*</exclude>
+          </excludes>
+        </configuration>
       </plugin>
     </plugins>
   </build>
